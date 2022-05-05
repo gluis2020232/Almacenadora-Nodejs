@@ -33,7 +33,25 @@ function agregarLigas(req, res) {
 }
 
 
+
+function editarLigas(req, res) {
+    var idLig = req.params.idLiga; //Obtener el valor de la variable en ruta
+    var parametros = req.body; //Obtener los los parámetros en el body
+
+    Ligas.findByIdAndUpdate(idLig, parametros, { new: true }, (err, ligaEditado) => {
+
+        //Verificaciones
+        if (err) return res.status(500).send({ mensaje: 'Error en la peticion' });
+        if (!ligaEditado) return res.status(404)
+            .send({ mensaje: 'Error al Editar la liga' });
+        //Verificaciones
+
+        return res.status(200).send({ ligas: ligaEditado });
+    })
+}
+
 module.exports = {
     obtenerLigas,
-    agregarLigas
+    agregarLigas,
+    editarLigas,
 }
