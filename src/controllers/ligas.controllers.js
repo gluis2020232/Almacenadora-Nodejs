@@ -50,8 +50,25 @@ function editarLigas(req, res) {
     })
 }
 
+
+function eliminarLigas(req, res) {
+    var idLig = req.params.idLiga; //Obtener el valor de la variable en ruta
+
+    Ligas.findByIdAndDelete(idLig, (err, ligaEliminado) => {
+
+        //Verificaciones
+        if (err) return res.status(500).send({ mensaje: 'Error en la peticion' });
+        if (!ligaEliminado) return res.status(500)
+            .send({ mensaje: 'Error al eliminar la liga' })
+            //Verificaciones
+
+        return res.status(200).send({ producto: ligaEliminado });
+    })
+}
+
 module.exports = {
     obtenerLigas,
     agregarLigas,
     editarLigas,
+    eliminarLigas
 }
