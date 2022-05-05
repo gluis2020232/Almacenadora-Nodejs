@@ -4,8 +4,7 @@ var Schema = mongoose.Schema; //Variable de esquema
 //Crear variable
 var ligasSchema = Schema({
     nombreLiga: String,
-    proveedor: String,
-    precio: String,
+    cantidadEquipos: Number,
     idAdmin: { type: Schema.Types.ObjectId, ref: 'Usuarios' } //Referencia a model Usuarios
 })
 
