@@ -12,7 +12,7 @@ api.post('/registrarCliente', usuarioControlador.RegistrarCliente);
 api.post('/registrarAdmin', usuarioControlador.RegistrarAdmin);
 api.post('/login', usuarioControlador.Login);
 
-api.put('/editarUsuario/:idUsuario', [md_autenticacion.Auth, md_roles.verAdminEdit], usuarioControlador.EditarUsuario);
-api.delete('/eliminarUsuario/:idUsuario', [md_autenticacion.Auth, md_roles.verAdminDelete], usuarioControlador.EliminarUsuario);
+api.put('/editarUsuario/:idUsuario', [md_autenticacion.Auth, md_roles.EditAdmin], usuarioControlador.EditarUsuario);
+api.delete('/eliminarUsuario/:idUsuario', [md_autenticacion.Auth, md_roles.deleteAdmin], usuarioControlador.EliminarUsuario);
 
 module.exports = api;

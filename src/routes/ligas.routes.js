@@ -10,9 +10,9 @@ const md_roles = require('../middlewares/roles')
 const api = express.Router();
 
 //api.get('/obtenerProductos', [md_autenticacion.Auth, md_roles.verAdminVisua], controladorProducto.obtenerProductos);
-api.get('/verLigas', controladorLiga.obtenerLigas);
-api.post('/agregarLiga', controladorLiga.agregarLigas);
-api.put('/editarLiga/:idLiga', controladorLiga.editarLigas);
-api.delete('/eliminarLiga/:idLiga', controladorLiga.eliminarLigas);
+api.get('/verLigas', [md_autenticacion.Auth, md_roles.verCliente], controladorLiga.obtenerLigas);
+api.post('/agregarLiga', [md_autenticacion.Auth, md_roles.addCliente], controladorLiga.agregarLigas);
+api.put('/editarLiga/:idLiga', [md_autenticacion.Auth, md_roles.EditCliente], controladorLiga.editarLigas);
+api.delete('/eliminarLiga/:idLiga', [md_autenticacion.Auth, md_roles.deleteCliente], controladorLiga.eliminarLigas);
 
 module.exports = api;

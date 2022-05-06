@@ -42,8 +42,7 @@ function editarLigas(req, res) {
 
         //Verificaciones
         if (err) return res.status(500).send({ mensaje: 'Error en la peticion' });
-        if (!ligaEditado) return res.status(404)
-            .send({ mensaje: 'Error al Editar la liga' });
+        if (!ligaEditado) return res.status(404).send({ mensaje: 'Error al Editar la liga' });
         //Verificaciones
 
         return res.status(200).send({ ligas: ligaEditado });
@@ -58,8 +57,7 @@ function eliminarLigas(req, res) {
 
         //Verificaciones
         if (err) return res.status(500).send({ mensaje: 'Error en la peticion' });
-        if (!ligaEliminado) return res.status(500)
-            .send({ mensaje: 'Error al eliminar la liga' })
+        if (!ligaEliminado) return res.status(500).send({ mensaje: 'Error al eliminar la liga' })
             //Verificaciones
 
         return res.status(200).send({ producto: ligaEliminado });
