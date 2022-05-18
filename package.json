@@ -1,11 +1,15 @@
 {
-    "name": "Almacenadora Torneo Deportivo",
+    "name": "almacenadora-nodejs",
     "version": "1.0.0",
-    "description": "ProyectoFinal_Unidad2_Nodejs_MongoDB",
+    "description": "Proyecto Almacenadora Torneo Deportivo",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gluis2020232/Almacenadora-Nodejs.git"
     },
     "author": "Genrry Luis",
     "license": "ISC",
@@ -18,5 +22,9 @@
         "mongoose": "^6.2.4",
         "nodemon": "^2.0.15",
         "pdfkit": "^0.13.0"
-    }
+    },
+    "bugs": {
+        "url": "https://github.com/gluis2020232/Almacenadora-Nodejs/issues"
+    },
+    "homepage": "https://github.com/gluis2020232/Almacenadora-Nodejs#readme"
 }

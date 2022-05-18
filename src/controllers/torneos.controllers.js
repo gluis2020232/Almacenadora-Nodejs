@@ -16,7 +16,7 @@ function agregarTorneos(req, res) {
 
     if (parametros.nombreTorneo) {
         modeloTorneos.nombreTorneo = parametros.nombreTorneo;
-        modeloTorneos.categorias = parametros.categorias;
+        modeloTorneos.categoria = parametros.categoria;
         //modeloLigas.idAdmin = req.user.sub; // El id del Admin viene en el token
 
         modeloTorneos.save((err, torneoGuardado) => { //Almacenar a la base de datos
